@@ -17,6 +17,7 @@
 }
 
 * {
+  padding: 0;
   margin: 0;
   font-size: 100%;
   font-weight: normal;
@@ -35,14 +36,131 @@ img {
     ---
     Default markup for page level elements
 */
+html {
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+  color: #212529;
+  scroll-behavior: smooth;
+}
+
 /*
     Customize the background color and color to match your design.
 */
+::-moz-selection {
+  background: #5c7cfa;
+  color: white;
+}
+::selection {
+  background: #5c7cfa;
+  color: white;
+}
+
 /*
     Elements: typography
     ---
     Default markup for typographic elements
 */
+h1 {
+  font-size: 1.8020324707rem;
+  font-weight: 700;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 36.0625em) {
+  h1 {
+    font-size: 2.8865075782rem;
+    line-height: 3rem;
+  }
+}
+@media (min-width: 48.0625em) {
+  h1 {
+    font-size: 3.6532361537rem;
+    line-height: 4rem;
+  }
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.423828125rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin-bottom: 1.5rem;
+}
+
+ul,
+ol {
+  margin-left: 1.5rem;
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.423828125rem;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+figcaption {
+  font-size: 0.8888888889rem;
+  line-height: 1rem;
+  margin-top: 0.5rem;
+  color: #868e96;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #dee2e6;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: #4c6ef5;
+  transition: all 0.1s ease-in-out;
+}
+
+a:visited {
+  color: #4c6ef5;
+}
+
+a:hover {
+  color: #5c7cfa;
+}
+
+a:active {
+  color: #4263eb;
+}
+
 /*---------------------------------------/*
  # OBJECTS
 /*---------------------------------------*/
@@ -51,16 +169,38 @@ img {
     ---
     Creates a horizontal row with padding
 */
+.o-row {
+  padding: 1.5rem 1.5rem 0;
+  display: flow-root;
+}
+
+.o-row--primary {
+  background: #748ffc;
+}
+
+.o-row--grey-dark {
+  background-color: #212529;
+  color: white;
+}
+
+@media (min-width: 48.0625em) {
+  .o-row--l {
+    padding: 3rem 3rem 1.5rem;
+  }
+}
+
 /*
     Objects: Container
     ---
     Creates a horizontal container that sets de global max-width
 */
-/*
-    Objects: Layout
-    ---
-    Creates a Layout with flexbox
-*/
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 75rem;
+}
+
 /*
     Objects: Layout
     ---
@@ -78,6 +218,36 @@ img {
 }
 
 /* gutter modifiers, these affect o-layout__item too */
+.o-layout--gutter {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.o-layout--gutter-s {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.o-layout--gutter-s > .o-layout__item {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.o-layout--gutter-l {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.o-layout--gutter-l > .o-layout__item {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 /* reverse horizontal row modifier */
 .o-layout--row-reverse {
   flex-direction: row-reverse;
@@ -146,9 +316,14 @@ img {
   align-content: space-between;
 }
 
-/*---------------------------------------/*
- # COMPONENTS
-/*---------------------------------------*/
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+/*
+    Component: Component name
+    ---
+    Component description
+*/
 /*
     Component: layout block
     ---
@@ -170,6 +345,23 @@ img {
 /*---------------------------------------/*
  # UTILITIES
 /*---------------------------------------*/
+/*
+    Utilities: Max widths
+    ---
+    max-width utility classes
+*/
+.u-max-width-s {
+  max-width: 37.5rem;
+}
+
+.u-max-width-m {
+  max-width: 60rem;
+}
+
+.u-max-width-l {
+  max-width: 87.5rem;
+}
+
 /*
     Utilities: Widths
     ---
